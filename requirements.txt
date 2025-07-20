@@ -1,0 +1,3 @@
+ Authlib 
+ python-social-auth
+ python-dotenv
