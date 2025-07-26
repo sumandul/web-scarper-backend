@@ -103,9 +103,16 @@ async def auth(request: Request, db: Session = Depends(get_db)):
             'picture': user.picture
         }
 
-        return RedirectResponse(url="/")
+        return RedirectResponse("http://localhost:3000/")
     
     except Exception as e:
         import traceback
         traceback.print_exc()  # prints full error in terminal
         return JSONResponse(status_code=500, content={"detail": str(e)})
+    
+    @router.get("/me")
+    def get_me(request: Request):
+     user = request.session.get("user")
+    if not user:
+        raise HTTPException(status_code=401, detail="Not logged in")
+    return user

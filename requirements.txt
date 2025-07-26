@@ -1,3 +1,13 @@
  Authlib 
  python-social-auth
  python-dotenv
+ psycopg2-binary
+ sqlalchemy
+ starlette
+itsdangerous
+httpx
+bs4
+playwright
+spacy
+transformers
+uvicorn
